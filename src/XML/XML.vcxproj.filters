@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Headers\Detail">
+      <UniqueIdentifier>{ba2c2f86-6162-4a68-944e-5a8eb1c44d3d}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Sources\Detail">
+      <UniqueIdentifier>{c57e8443-e908-43bc-a5cc-20f9b9001b7d}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Et\XML.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Detail\DOMDocument.hpp">
+      <Filter>Headers\Detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Detail\SAXReader.hpp">
+      <Filter>Headers\Detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Detail\Common.hpp">
+      <Filter>Headers\Detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Detail\MXWriter.hpp">
+      <Filter>Headers\Detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Detail\Errors.hpp">
+      <Filter>Headers\Detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Detail\DOMNode.hpp">
+      <Filter>Headers\Detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Et\XML\XmlAttributeList.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Et\XML\XmlUtils.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Et\XML\XmlDef.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Et\XML\XmlDocument.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Et\XML\XmlElement.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Et\XML\XmlException.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Et\XML\XmlInc.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Et\XML\XmlNode.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Et\XML\XmlNodeList.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Et\XML\XmlParseError.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Et\XML\XmlSerializer.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Et\XML\XmlTypes.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Detail\DOMDocument.cpp">
+      <Filter>Sources\Detail</Filter>
+    </ClCompile>
+    <ClCompile Include="Detail\SAXReader.cpp">
+      <Filter>Sources\Detail</Filter>
+    </ClCompile>
+    <ClCompile Include="Detail\Common.cpp">
+      <Filter>Sources\Detail</Filter>
+    </ClCompile>
+    <ClCompile Include="Detail\MXWriter.cpp">
+      <Filter>Sources\Detail</Filter>
+    </ClCompile>
+    <ClCompile Include="Detail\DOMNode.cpp">
+      <Filter>Sources\Detail</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlAttributeList.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlUtils.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlDocument.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlElement.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlException.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlNode.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlNodeList.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlParseError.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlSerializer.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
