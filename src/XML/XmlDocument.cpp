@@ -92,6 +92,9 @@ XmlNode XmlDocument::CreateNode(XmlNodeType type, const std::wstring& name, cons
 	auto createNodeResult = documentPtr->createNode(nodeType, nodeName, nodeNamespace, &nodePtr);
 	_ET_XML_ASSERT(createNodeResult != E_FAIL);
 
+	if (createNodeResult == E_INVALIDARG)
+		_ET_XML_THROW(XmlException::InvalidArgument(), Detail::kInvalidArgument);
+
 	return XmlNode(std::move(nodePtr));
 }
 
