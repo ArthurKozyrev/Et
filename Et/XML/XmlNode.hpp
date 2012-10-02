@@ -21,7 +21,7 @@ public:
 	virtual ~XmlNode();
 	
 public:
-	void AppendChildNode(const XmlNode& new_child) throw(...);
+	XmlNode AppendChildNode(const XmlNode& new_child) throw(...);
 	
 	XmlNode CloneNode(bool child_nodes) const;
 	
@@ -56,8 +56,8 @@ public:
 	XmlNodeList GetChildNodeList() const;
 	XmlAttributeList GetAttributeList() const;
 	
-	bool InsertChildNode(const XmlNode& new_child, size_t index) throw(...);
-	bool InsertChildNode(const XmlNode& new_child, const XmlNode& ref_child) throw(...);
+	XmlNode InsertChildNode(const XmlNode& new_child, size_t index) throw(...);
+	XmlNode InsertChildNode(const XmlNode& new_child, const XmlNode& ref_child) throw(...);
 	
 	bool IsRoot() const;
 	bool IsHasChildNodes() const;
