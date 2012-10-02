@@ -42,7 +42,7 @@ XmlNode::~XmlNode()
 
 /*************************************************************************************************/
 
-void XmlNode::AppendChildNode(const XmlNode& new_child)
+void XmlNode::AppendChildNode(const XmlNode& new_child) throw(...)
 {
 	InsertChildNode(new_child, EmptyNode());
 }
@@ -376,12 +376,12 @@ XmlAttributeList XmlNode::GetAttributeList() const
 
 
 
-bool XmlNode::InsertChildNode(const XmlNode& new_child, size_t index)
+bool XmlNode::InsertChildNode(const XmlNode& new_child, size_t index) throw(...)
 {
 	return InsertChildNode(new_child, GetChildNode(index));
 }
 
-bool XmlNode::InsertChildNode(const XmlNode& new_child, const XmlNode& ref_child)
+bool XmlNode::InsertChildNode(const XmlNode& new_child, const XmlNode& ref_child) throw(...)
 {
 	const _variant_t referenceChild(ref_child._implPtr);
 	_DOMNodePtr_t insertedNodePtr;
