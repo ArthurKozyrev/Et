@@ -25,7 +25,7 @@ public:
 	
 public:
 	long GetCode() const;
-	std::wstring GetMessage() const;
+	std::wstring GetDescription() const;
 	size_t GetLine() const;
 	size_t GetLinePosition() const;
 	std::wstring GetLineText() const;

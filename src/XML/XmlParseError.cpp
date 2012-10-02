@@ -46,7 +46,7 @@ long XmlParseError::GetCode() const
 	return errorCode;
 }
 
-std::wstring XmlParseError::GetMessage() const
+std::wstring XmlParseError::GetDescription() const
 {
 	BSTR description = nullptr;
 	const bstr_ptr_t descriptionPtr(&description);

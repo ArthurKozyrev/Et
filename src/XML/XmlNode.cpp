@@ -42,9 +42,9 @@ XmlNode::~XmlNode()
 
 /*************************************************************************************************/
 
-void XmlNode::AppendChildNode(const XmlNode& new_child)
+XmlNode XmlNode::AppendChildNode(const XmlNode& new_child) throw(...)
 {
-	InsertChildNode(new_child, EmptyNode());
+	return InsertChildNode(new_child, EmptyNode());
 }
 
 
@@ -376,12 +376,12 @@ XmlAttributeList XmlNode::GetAttributeList() const
 
 
 
-bool XmlNode::InsertChildNode(const XmlNode& new_child, size_t index)
+XmlNode XmlNode::InsertChildNode(const XmlNode& new_child, size_t index) throw(...)
 {
 	return InsertChildNode(new_child, GetChildNode(index));
 }
 
-bool XmlNode::InsertChildNode(const XmlNode& new_child, const XmlNode& ref_child)
+XmlNode XmlNode::InsertChildNode(const XmlNode& new_child, const XmlNode& ref_child) throw(...)
 {
 	const _variant_t referenceChild(ref_child._implPtr);
 	_DOMNodePtr_t insertedNodePtr;
@@ -392,7 +392,7 @@ bool XmlNode::InsertChildNode(const XmlNode& new_child, const XmlNode& ref_child
 	if (insertBeforeResult == E_FAIL)
 		_ET_XML_THROW(XmlException::InternalError(), Detail::kCannotInsertNode);
 
-	return (insertBeforeResult != E_FAIL);
+	return XmlNode(std::move(insertedNodePtr));
 }
 
 
