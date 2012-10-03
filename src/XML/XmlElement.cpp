@@ -23,7 +23,7 @@ XmlElement::XmlElement(const _DOMElementPtr_t& ptr) : XmlNode(ptr)
 
 XmlElement::XmlElement(const XmlNode& node) throw(...) : XmlNode(node)
 {
-	if (!_implPtr.QueryInterface<_DOMElementPtr_t::Element_t>())
+	if (_implPtr && !_implPtr.QueryInterface<_DOMElementPtr_t::Element_t>())
 		_ET_XML_THROW(XmlException::InvalidOperation(), Detail::kNodeIsNotAnElement);
 }
 
@@ -33,7 +33,7 @@ XmlElement::XmlElement(const XmlElement& element) : XmlNode(element._implPtr)
 
 XmlElement::XmlElement(XmlNode&& node) throw(...) : XmlNode(std::forward<XmlNode>(node))
 {
-	if (!_implPtr.QueryInterface<_DOMElementPtr_t::Element_t>())
+	if (_implPtr && !_implPtr.QueryInterface<_DOMElementPtr_t::Element_t>())
 		_ET_XML_THROW(XmlException::InvalidOperation(), Detail::kNodeIsNotAnElement);
 }
 
