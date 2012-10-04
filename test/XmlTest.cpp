@@ -38,27 +38,38 @@ public:
 	{
 		using namespace Et::XML;
 
+		XmlNodeType nodeType1 = XmlNodeType::Element | XmlNodeType::Attribute | XmlNodeType::CDATA;
+		XmlNodeType nodeType2 = nodeType1 & (XmlNodeType::Attribute | XmlNodeType::CDATA);
+		XmlNodeType nodeType3 = nodeType1; nodeType3 &= ~XmlNodeType::CDATA;
+		XmlNodeType nodeType4 = ~nodeType1; nodeType4 ^= ~XmlNodeType::Element;
+		XmlNodeType nodeType5 = nodeType2; nodeType5 |= nodeType4 | XmlNodeType::Comment;
+	}
+
+	TEST_METHOD(XML_2)
+	{
+		using namespace Et::XML;
+
 		CoInitialize(nullptr);
 		try
 		{
-			std::wstring str;
-
 			XmlDocument document = LoadXmlDocument(kXmlString, wcslen(kXmlString) * 2);
+
+			//XmlNode
 			XmlNode node = document;
 			XmlNode node2 = XmlNode::EmptyNode();
 			XmlNode node3 = document.CreateNode(XmlNodeType::DocumentFragment, L"");
 
-			Assert::IsTrue(node, nullptr, LINE_INFO());
-			Assert::IsTrue(!node2, nullptr, LINE_INFO());
-			Assert::IsTrue(node3, nullptr, LINE_INFO());
-			Assert::IsTrue(node == document, nullptr, LINE_INFO());
-			Assert::IsTrue(node2 != document, nullptr, LINE_INFO());
+			Assert::IsTrue(node);
+			Assert::IsTrue(!node2);
+			Assert::IsTrue(node3);
+			Assert::IsTrue(node == document);
+			Assert::IsTrue(node2 != document);
 
-			Assert::IsTrue(node3.AppendChildNode(document.CreateElement(L"root")), nullptr, LINE_INFO());
-			Assert::IsTrue(node3.GetXML() == L"<root/>", nullptr, LINE_INFO());
-			Assert::IsTrue(node3.CloneNode(true), nullptr, LINE_INFO());
-			Assert::IsTrue(node3.RemoveChildNode(L"root", 0), nullptr, LINE_INFO());
-			Assert::IsTrue(node3.GetXML().empty(), nullptr, LINE_INFO());
+			Assert::IsTrue(node3.AppendChildNode(document.CreateElement(L"root")));
+			Assert::IsTrue(node3.GetXML() == L"<root/>");
+			Assert::IsTrue(node3.CloneNode(true));
+			Assert::IsTrue(node3.RemoveChildNode(L"root", 0));
+			Assert::IsTrue(node3.GetXML().empty());
 
 			node3 = document.CreateElement(L"root", L"uri");
 			Assert::IsTrue(node3.SetText(L"text"));
@@ -68,12 +79,18 @@ public:
 			Assert::IsTrue(node3.GetLocalName() == node3.GetName());
 			Assert::IsTrue(node3.GetText() == L"text");
 
-			Assert::IsTrue(node3.GetParentNode() == XmlNode::EmptyNode(), nullptr, LINE_INFO());
-			Assert::IsTrue(node3.IsRoot(), nullptr, LINE_INFO());
-			Assert::IsTrue(node3.IsParsed(), nullptr, LINE_INFO());
-			Assert::IsTrue(node3.IsHasChildNodes(), nullptr, LINE_INFO());
-			Assert::IsTrue(node3.ReplaceChildNode(document.CreateTextNode(L"text2"), node3.GetChildNode(XmlNodeType::Text)), nullptr, LINE_INFO());
-			Assert::IsTrue(node3.GetText() == L"text2", nullptr, LINE_INFO());
+			Assert::IsTrue(node3.GetParentNode() == XmlNode::EmptyNode());
+			Assert::IsTrue(node3.IsRoot());
+			Assert::IsTrue(node3.IsParsed());
+			Assert::IsTrue(node3.IsHasChildNodes());
+			Assert::IsTrue(node3.ReplaceChildNode(document.CreateTextNode(L"text2"), node3.GetChildNode(XmlNodeType::Text)));
+			Assert::IsTrue(node3.GetText() == L"text2");
+
+			//XmlElement
+			XmlElement element = document.GetDocumentElement();
+
+			Assert::IsTrue(element.GetChildElementCount() == 3);
+			//Assert::Is
 		}
 		catch(const XmlException& xe)
 		{
