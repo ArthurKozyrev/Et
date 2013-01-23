@@ -26,7 +26,7 @@ public:
 	XmlException(const char* message);
 	XmlException(const XmlException& other);
 	XmlException(XmlException&& other);
-	~XmlException();
+	~XmlException() throw();
 
 public:
 	auto GetDefaultMessage() const -> const char* const override;

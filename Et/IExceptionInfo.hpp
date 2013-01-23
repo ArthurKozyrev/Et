@@ -9,6 +9,9 @@
 
 namespace Et {
 
+class __declspec(uuid("82D95C21-6A56-46B0-B3A4-7BAE95C09346"))
+IExceptionInfo;
+
 enum class ExceptionInfoType : unsigned int
 {
 	Message,
@@ -20,7 +23,6 @@ enum class ExceptionInfoType : unsigned int
 
 /*************************************************************************************************/
 
-[uuid("82D95C21-6A56-46B0-B3A4-7BAE95C09346")]
 class IExceptionInfo : public IUnknown
 {
 public:

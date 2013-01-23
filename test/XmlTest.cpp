@@ -100,12 +100,12 @@ public:
 				const auto description = xe.parseError.GetDescription();
 				LOG(description.c_str()), LOG_NL();
 			}
-			Assert::Fail(nullptr, LINE_INFO());
+			Assert::Fail(nullptr);
 		}
 		catch(const std::exception& e)
 		{
 			LOG(e.what()), LOG_NL();
-			Assert::Fail(nullptr, LINE_INFO());
+			Assert::Fail(nullptr);
 		}
 		CoUninitialize();
 	}
