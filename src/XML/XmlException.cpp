@@ -26,7 +26,7 @@ XmlException::XmlException(XmlException&& other) : Exception(std::forward<Except
 {
 }
 
-XmlException::~XmlException()
+XmlException::~XmlException() throw()
 {
 }
 

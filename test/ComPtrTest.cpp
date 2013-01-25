@@ -44,19 +44,19 @@ public:
 			cp2 = xmlDomDocumentPtr;
 			cp3 = cp2;
 			cp4 = std::move(cp3);
-			Assert::IsTrue(cp1 != cp2, nullptr, LINE_INFO());
-			Assert::IsTrue(!cp3, nullptr, LINE_INFO());
-			Assert::IsTrue(cp4, nullptr, LINE_INFO());
-			Assert::IsTrue(cp4.IsEqualObject(cp1), nullptr, LINE_INFO());
-			Assert::IsTrue(cp4.IsEqual(cp2), nullptr, LINE_INFO());
-			Assert::IsTrue(cp4.IsEqual(static_cast<IUnknown*>(cp2)), nullptr, LINE_INFO());
+			Assert::IsTrue(cp1 != cp2);
+			Assert::IsTrue(!cp3);
+			Assert::IsTrue(cp4);
+			Assert::IsTrue(cp4.IsEqualObject(cp1));
+			Assert::IsTrue(cp4.IsEqual(cp2));
+			Assert::IsTrue(cp4.IsEqual(static_cast<IUnknown*>(cp2)));
 			LOG(cp2 > cp1 ? "cp2 > cp1" : "cp2 <= cp1"), LOG_NL();
 
 			cp5 = cp1;
 			cp6 = cp2;
 			(*cp5).QueryInterface(&cp7);
 			cp7.Detach()->Release();
-			Assert::IsTrue(cp5 && cp6 && !cp7, nullptr, LINE_INFO());
+			Assert::IsTrue(cp5 && cp6 && !cp7);
 		}
 		CoUninitialize();
 	}

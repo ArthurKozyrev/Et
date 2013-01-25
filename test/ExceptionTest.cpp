@@ -48,13 +48,13 @@ public:
 		Exception e4 = e2;
 		Exception e5 = std::move(Exception(nullptr));
 
-		Assert::IsNotNull(e1.what(), nullptr, LINE_INFO());
-		Assert::IsNotNull(e2.what(), nullptr, LINE_INFO());
-		Assert::IsNull(e3.what(), nullptr, LINE_INFO());
-		Assert::IsNotNull(e4.what(), nullptr, LINE_INFO());
-		Assert::IsNull(e5.what(), nullptr, LINE_INFO());
-		Assert::AreNotEqual(e1.what(), e2.what(), false, nullptr, LINE_INFO());
-		Assert::AreNotEqual(e2.what(), e3.what(), false, nullptr, LINE_INFO());
+		Assert::IsNotNull(e1.what());
+		Assert::IsNotNull(e2.what());
+		Assert::IsNull(e3.what());
+		Assert::IsNotNull(e4.what());
+		Assert::IsNull(e5.what());
+		Assert::AreNotEqual(e1.what(), e2.what());
+		Assert::AreNotEqual(e2.what(), e3.what());
 	}
 
 	TEST_METHOD(Exception_2)
@@ -69,10 +69,10 @@ public:
 		Exception e2(kMessage, kErrorCode);
 		Exception e3 = e2;
 
-		Assert::IsNotNull(e1.GetExceptionInfo(ExceptionInfoType::Message), nullptr, LINE_INFO());
-		Assert::AreEqual(e2.GetExceptionInfo(ExceptionInfoType::ErrorCode), kErrorCodeStr.c_str(), false, nullptr, LINE_INFO());
-		Assert::AreEqual(e3.GetExceptionInfo(ExceptionInfoType::Message), e2.GetExceptionInfo(ExceptionInfoType::Message), false, nullptr, LINE_INFO());
-		Assert::AreEqual(e3.GetExceptionInfoImpl(ExceptionInfoType::File), e2.GetExceptionInfoImpl(ExceptionInfoType::File), nullptr, LINE_INFO());
+		Assert::IsNotNull(e1.GetExceptionInfo(ExceptionInfoType::Message));
+		Assert::AreEqual(e2.GetExceptionInfo(ExceptionInfoType::ErrorCode), kErrorCodeStr.c_str());
+		Assert::AreEqual(e3.GetExceptionInfo(ExceptionInfoType::Message), e2.GetExceptionInfo(ExceptionInfoType::Message));
+		Assert::AreEqual(e3.GetExceptionInfoImpl(ExceptionInfoType::File), e2.GetExceptionInfoImpl(ExceptionInfoType::File));
 
 		try
 		{
@@ -101,7 +101,7 @@ public:
 		e << Exception2::ErrorCodeInfo_t("-1") << fileInfo << Exception2::LocationInfo_t(__FUNCSIG__);
 		e >> lineInfo;
 		auto lineInfoImpl = e.GetExceptionInfoImpl(ExceptionInfoType::Line);
-		Assert::AreEqual(lineInfo.GetInfo(), lineInfoImpl->GetInfo(), false, nullptr, LINE_INFO());
+		Assert::AreEqual(lineInfo.GetInfo(), lineInfoImpl->GetInfo());
 
 		try
 		{
@@ -109,7 +109,7 @@ public:
 		}
 		catch(const Exception2& e)
 		{
-			Assert::AreEqual(kMessage, e.what(), false, nullptr, LINE_INFO());	
+			Assert::AreEqual(kMessage, e.what());	
 
 			LOG(e.what()), LOG_NL();
 		}

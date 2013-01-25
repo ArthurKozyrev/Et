@@ -40,7 +40,7 @@ public:
 	explicit Exception(const char* message, int error_code = 0);
 	Exception(const Exception& other);
 	Exception(Exception&& other);
-	virtual ~Exception();
+	~Exception() throw();
 
 public:
 	virtual auto GetDefaultMessage() const -> const char* const;
@@ -113,7 +113,7 @@ Exception<T>::Exception(Exception&& other)
 }
 
 template <typename T>
-Exception<T>::~Exception()
+Exception<T>::~Exception() throw()
 {
 }
 
