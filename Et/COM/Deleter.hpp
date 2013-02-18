@@ -2,7 +2,7 @@
 //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //  Elenian Toolkit: STL deleters for COM
 //  Version 1.0.0
-//  Copyright © 2011-2012, Arthur Kozyrev
+//  Copyright © 2011-2013, Arthur Kozyrev
 //  Web: https://github.com/ArthurKozyrev/Et
 //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
