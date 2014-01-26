@@ -2,7 +2,7 @@
 //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //  Elenian Toolkit: string manipulation
 //  Version 1.0.0
-//  Copyright © 2011-2013, Arthur Kozyrev
+//  Copyright © 2011-2014, Arthur Kozyrev
 //  Web: https://github.com/ArthurKozyrev/Et
 //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

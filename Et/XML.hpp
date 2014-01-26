@@ -2,7 +2,7 @@
 //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //  Elenian Toolkit: XML library
 //  Version 1.0.3
-//  Copyright © 2011-2013, Arthur Kozyrev
+//  Copyright © 2011-2014, Arthur Kozyrev
 //  Web: https://github.com/ArthurKozyrev/Et
 //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //  Available defines:

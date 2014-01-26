@@ -1,6 +1,6 @@
 ﻿Elenian Toolkit 0.8
 ===================
-Copyright © 2011-2013, Arthur Kozyrev
+Copyright © 2011-2014, Arthur Kozyrev
 https://github.com/ArthurKozyrev/Et
 
 System requirements:
